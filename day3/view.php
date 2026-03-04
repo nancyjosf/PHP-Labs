@@ -10,7 +10,6 @@ $emp = $stm->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,10 +24,12 @@ $emp = $stm->fetch(PDO::FETCH_ASSOC);
         <table class="table table-bordered">
             <tbody>
                 <?php foreach ($emp as $key => $val): ?>
+                    <?php if (!is_numeric($key)): ?> 
                     <tr>
                         <th style="width: 180px;"><?= ucfirst($key) ?></th>
-                        <td><?= htmlspecialchars((string)$val) ?></td>
+                        <td><?= $val ?></td>
                     </tr>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -37,5 +38,4 @@ $emp = $stm->fetch(PDO::FETCH_ASSOC);
         <a href="edit.php?id=<?= $emp['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
     </div>
 </body>
-
 </html>

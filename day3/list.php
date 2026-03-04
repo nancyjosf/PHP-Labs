@@ -39,16 +39,16 @@ $result = $connection->query("SELECT * FROM employees");
                     <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
                         <tr>
                             <td><?= $row['id'] ?></td>
-                            <td><?= htmlspecialchars($row['name']) ?></td>
-                            <td><?= htmlspecialchars($row['lastname']) ?></td>
-                            <td><?= htmlspecialchars($row['address']) ?></td>
-                            <td><?= htmlspecialchars($row['country']) ?></td>
-                            <td><?= htmlspecialchars($row['gender']) ?></td>
-                            <td><?= htmlspecialchars($row['skills']) ?></td>
-                            <td><?= htmlspecialchars($row['username']) ?></td>
-                            <td><?= htmlspecialchars($row['password']) ?></td>
-                            <td><?= htmlspecialchars($row['department']) ?></td>
-                            <td><?= htmlspecialchars($row['captcha']) ?></td>
+                            <td><?= $row['name'] ?></td>
+                            <td><?= $row['lastname'] ?></td>
+                            <td><?= $row['address'] ?></td>
+                            <td><?= $row['country'] ?></td>
+                            <td><?= $row['gender'] ?></td>
+                            <td><?= $row['skills'] ?></td>
+                            <td><?= $row['username'] ?></td>
+                            <td><?= $row['password'] ?></td>
+                            <td><?= $row['department'] ?></td>
+                            <td><?= $row['captcha'] ?></td>
                             <td class="d-flex justify-content-center gap-2">
                                 <a href="view.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-secondary">View</a>
                                 <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-primary">Edit</a>
@@ -58,6 +58,9 @@ $result = $connection->query("SELECT * FROM employees");
                     <?php endwhile; ?>
                 </tbody>
             </table>
+        </div>
+        <div class="text-center mb-3">
+            <a href="register.php" class="btn btn-success">Add Employee</a>
         </div>
     </div>
 </body>

@@ -27,15 +27,15 @@ $emp = $stm->fetch(PDO::FETCH_ASSOC);
 
             <div class="mb-3">
                 <label class="form-label">First name</label>
-                <input type="text" name="name" value="<?= htmlspecialchars($emp['name']) ?>" class="form-control">
+                <input type="text" name="name" value="<?= $emp['name'] ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Last name</label>
-                <input type="text" name="lastname" value="<?= htmlspecialchars($emp['lastname']) ?>" class="form-control">
+                <input type="text" name="lastname" value="<?= $emp['lastname'] ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Address</label>
-                <textarea name="address" class="form-control"><?= htmlspecialchars($emp['address']) ?></textarea>
+                <textarea name="address" class="form-control"><?= $emp['address'] ?></textarea>
             </div>
 
             <div class="mb-3">
@@ -60,25 +60,25 @@ $emp = $stm->fetch(PDO::FETCH_ASSOC);
 
             <div class="mb-3">
                 <label class="form-label">Skills</label>
-                <input type="text" name="skills" value="<?= htmlspecialchars($emp['skills']) ?>" class="form-control">
+                <input type="text" name="skills" value="<?= $emp['skills'] ?>" class="form-control">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input type="text" name="username" value="<?= htmlspecialchars($emp['username']) ?>" class="form-control">
+                <input type="text" name="username" value="<?= $emp['username'] ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="text" name="password" value="<?= htmlspecialchars($emp['password']) ?>" class="form-control">
+                <input type="text" name="password" value="<?= $emp['password'] ?>" class="form-control">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Department</label>
-                <input type="text" name="department" value="<?= htmlspecialchars($emp['department']) ?>" class="form-control">
+                <input type="text" name="department" value="<?= $emp['department'] ?>" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Captcha</label>
-                <input type="text" name="captcha" value="<?= htmlspecialchars($emp['captcha']) ?>" class="form-control">
+                <input type="text" name="captcha" value="<?= $emp['captcha'] ?>" class="form-control">
             </div>
 
             <div class="d-flex gap-2">
