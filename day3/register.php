@@ -95,7 +95,7 @@
             </div>
 
             <div class="d-flex gap-2">
-                <input type="submit" value="Submit" class="btn btn-primary">
+                <input type="submit" name="register" value="Submit" class="btn btn-primary">
                 <input type="reset" value="Reset" class="btn btn-secondary">
             </div>
         </form>

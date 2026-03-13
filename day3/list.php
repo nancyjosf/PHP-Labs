@@ -36,7 +36,7 @@ $result = $connection->query("SELECT * FROM employees");
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
+                    <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td><?= $row['id'] ?></td>
                             <td><?= $row['name'] ?></td>

@@ -1,11 +1,23 @@
 <?php
 require "db.php";
 
-$id = $_GET['id'];
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-$stm = $connection->prepare("SELECT * FROM employees WHERE id=?");
-$stm->execute([$id]);
-$emp = $stm->fetch(PDO::FETCH_ASSOC);
+if ($id <= 0) {
+    echo "<div class='alert alert-danger text-center'>Invalid employee ID</div>";
+    exit;
+}
+
+$stm = $connection->prepare("SELECT * FROM employees WHERE id = ?");
+$stm->bind_param("i", $id);
+$stm->execute();
+$result = $stm->get_result();
+$emp = $result->fetch_assoc();
+
+if (!$emp) {
+    echo "<div class='alert alert-danger text-center'>Employee not found</div>";
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
